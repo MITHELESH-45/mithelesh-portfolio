@@ -9,7 +9,7 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_DATA = {
-  name: "Alexander_Dev",
+  name: "MITHELESH K",
   role: "Performance-Focused Frontend Engineer & UX Architect",
   description: "Crafting visually stunning, immersive web applications with locked 60FPS performance. Bridging the gap between 3D interactives and core UX.",
 };
@@ -62,17 +62,19 @@ export const PROJECTS = [
 export const EDUCATION = [
   {
     id: 1,
-    year: "2020 - 2024",
-    title: "B.Tech in Computer Science",
-    description: "Tech University",
+    year: "2023 - 2027",
+    title: "B.Tech Degree",
+    description: "Currently pursuing Bachelor of Technology. Specializing in modern web development and software engineering.",
     image: "/opensource_contrib.png", // Or appropriate generic image
+    status: "ongoing",
   },
   {
     id: 2,
-    year: "2018 - 2020",
-    title: "High School Diploma",
-    description: "Science Academy",
+    year: "Up to 2023",
+    title: "Higher Secondary School",
+    description: "Completed primary and higher secondary education with strong fundamentals.",
     image: "/opensource_contrib.png", 
+    status: "completed",
   }
 ];
 

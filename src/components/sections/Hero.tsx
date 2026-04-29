@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
                 <ArrowRight className="w-5 h-5" /> View Projects
               </Button>
             </Link>
-            <a href="/resume.pdf" download="Resume.pdf" className="w-full sm:w-auto mt-4 sm:mt-0">
+            <a href="/MITHELESH%20K%20RESUME.pdf" download="MITHELESH_K_RESUME.pdf" className="w-full sm:w-auto mt-4 sm:mt-0">
               <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
                 <Download className="w-5 h-5" /> Resume
               </Button>

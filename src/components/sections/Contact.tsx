@@ -33,13 +33,29 @@ export const Contact: React.FC = () => {
   const onSubmit = async (data: FormData) => {
     setStatus('loading');
     
-    // Simulate EmailJS execution for the mockup
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setStatus('success');
-      reset();
-      
-      setTimeout(() => setStatus('idle'), 3000);
+      const response = await fetch("https://formsubmit.co/ajax/mitheleshk3005@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            message: data.message,
+            _subject: "New Contact Form Submission from Portfolio",
+            _template: "table"
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        reset();
+        setTimeout(() => setStatus('idle'), 3000);
+      } else {
+        throw new Error("Failed to send message");
+      }
     } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
@@ -85,7 +101,7 @@ export const Contact: React.FC = () => {
               </Card>
             </a>
 
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/MITHELESH-45" target="_blank" rel="noopener noreferrer">
               <Card className="p-6 flex items-center gap-4 hover:border-white/50 transition-colors group cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                   <GithubIcon className="w-6 h-6" />
@@ -97,7 +113,7 @@ export const Contact: React.FC = () => {
               </Card>
             </a>
 
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/mitheleshk3005" target="_blank" rel="noopener noreferrer">
               <Card className="p-6 flex items-center gap-4 hover:border-[#0A66C2]/50 transition-colors group cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-[#0A66C2]/10 flex items-center justify-center text-[#0A66C2] group-hover:scale-110 transition-transform">
                   <LinkedinIcon className="w-6 h-6" />
