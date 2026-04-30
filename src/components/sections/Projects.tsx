@@ -4,7 +4,7 @@ import { PROJECTS } from '../../data';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { Modal } from '../ui/Modal';
-import { ExternalLink, GitBranch, Play, ChevronDown, ChevronUp, Globe, Maximize2 } from 'lucide-react';
+import { GitBranch, Play, ChevronDown, ChevronUp, Globe, Maximize2 } from 'lucide-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { useInView } from 'react-intersection-observer';
