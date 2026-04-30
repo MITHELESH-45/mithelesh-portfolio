@@ -1,15 +1,16 @@
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
+// @ts-ignore
 import * as random from 'maath/random/dist/maath-random.esm';
 import { useInView } from 'react-intersection-observer';
 
 const ParticleCloud = () => {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   // Generate random spherical positions
   const sphere = useMemo(() => random.inSphere(new Float32Array(3000), { radius: 1.5 }), []);
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (ref.current) {
       ref.current.rotation.x -= delta / 15;
       ref.current.rotation.y -= delta / 20;
