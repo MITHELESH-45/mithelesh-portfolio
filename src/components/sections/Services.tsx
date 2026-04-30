@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { SERVICES } from '../../data';
 import { Card } from '../ui/Card';
 import { useInView } from 'react-intersection-observer';

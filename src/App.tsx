@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { Navbar } from './components/layout/Navbar';
-import { CustomCursor } from './components/layout/CustomCursor';
 import { BackgroundParticles } from './components/3d/BackgroundParticles';
 import { AudioPlayer } from './components/layout/AudioPlayer';
 import { Spinner } from './components/ui/Spinner';
@@ -16,7 +15,6 @@ const Contact = React.lazy(() => import('./components/sections/Contact').then(m 
 function App() {
   return (
     <div className="relative w-full h-full text-white">
-      <CustomCursor />
       <Navbar />
       <BackgroundParticles />
 

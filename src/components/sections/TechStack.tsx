@@ -29,9 +29,10 @@ const Cloud = () => {
           <group position={positions[i]}>
             <Html transform sprite center>
               <div 
-                className="group relative flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 hover:z-50"
+                className="group relative flex flex-col items-center justify-center cursor-pointer"
               >
-                <div className="w-16 h-16 bg-white/90 shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.8)] backdrop-blur-sm rounded-2xl flex items-center justify-center p-3 transition-shadow duration-300">
+                {/* Logo Container - Removed scale-up on hover to keep it from "coming front" */}
+                <div className="w-16 h-16 bg-white/90 shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] backdrop-blur-sm rounded-2xl flex items-center justify-center p-3 transition-shadow duration-300">
                   <img
                     src={tech.logo}
                     alt={tech.name}
@@ -48,8 +49,8 @@ const Cloud = () => {
                   />
                 </div>
                 
-                {/* Tooltip */}
-                <div className="absolute top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity bg-dark border border-white/20 shadow-xl text-white text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap pointer-events-none">
+                {/* Tooltip - Still shows the name */}
+                <div className="absolute top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity bg-dark border border-white/20 shadow-xl text-white text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap pointer-events-none z-50">
                   {tech.name}
                   <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-dark border-t border-l border-white/20 rotate-45" />
                 </div>
@@ -64,7 +65,7 @@ const Cloud = () => {
 
 export const TechStack: React.FC = () => {
   return (
-    <section className="py-16 relative z-10">
+    <section className="py-16 relative z-10 overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-primary/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
 
@@ -78,7 +79,8 @@ export const TechStack: React.FC = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+            {/* Bigger Heading */}
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">
               Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">Globe</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-secondary to-primary rounded-full mx-auto lg:mx-0 mt-6 mb-8 shadow-[0_0_15px_rgba(0,240,255,0.5)]" />
@@ -92,8 +94,8 @@ export const TechStack: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Right Side: 3D Canvas */}
-        <div className="lg:w-2/3 h-[500px] md:h-[700px] lg:h-[850px] w-full relative cursor-grab active:cursor-grabbing lg:-mt-20">
+        {/* Right Side: 3D Canvas - Moved slightly to the right and up */}
+        <div className="lg:w-2/3 h-[500px] md:h-[700px] lg:h-[850px] w-full relative cursor-grab active:cursor-grabbing lg:-mt-20 lg:translate-x-12">
           <Canvas camera={{ position: [0, 2, 20], fov: 60 }}>
             <ambientLight intensity={0.8} />
             <pointLight position={[10, 10, 10]} intensity={1} />
