@@ -63,7 +63,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative">
+    <section id="contact" className="py-16 relative">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,7 +96,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors">Email</h4>
-                  <p className="text-white/60 text-sm">your.email@example.com</p>
+                  <p className="text-white/60 text-sm">mitheleshk3005@gmail.com</p>
                 </div>
               </Card>
             </a>
@@ -108,7 +108,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1 group-hover:text-white transition-colors">GitHub</h4>
-                  <p className="text-white/60 text-sm">github.com/yourusername</p>
+                  <p className="text-white/60 text-sm">github.com/MITHELESH-45</p>
                 </div>
               </Card>
             </a>
@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1 group-hover:text-[#0A66C2] transition-colors">LinkedIn</h4>
-                  <p className="text-white/60 text-sm">linkedin.com/in/yourprofile</p>
+                  <p className="text-white/60 text-sm">linkedin.com/in/mitheleshk3005</p>
                 </div>
               </Card>
             </a>

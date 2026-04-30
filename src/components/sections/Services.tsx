@@ -26,7 +26,7 @@ export const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-16 relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

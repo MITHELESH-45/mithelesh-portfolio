@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
             smooth={true}
             className="text-2xl font-mono font-bold tracking-tighter text-glow cursor-pointer text-white"
           >
-            A_DEV<span className="text-primary">.</span>
+            MITHELESH<span className="text-primary">.</span>
           </Link>
 
           {/* Desktop Nav */}

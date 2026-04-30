@@ -16,18 +16,34 @@
 
 @layer base {
   body {
-    @apply bg-background text-white font-sans antialiased selection:bg-primary selection:text-black;
+    @apply bg-background text-white font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #00f0ff;
+    color: #000;
   }
 }
 
 @layer utilities {
+  /* glass — written as plain CSS to avoid Tailwind v4 @apply arbitrary-value bug */
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.10);
   }
 
   .text-glow {
     text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+  }
+
+  .photo-blend {
+    -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 45%, black 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 85% 85% at 50% 45%, black 55%, transparent 100%);
   }
 }
 

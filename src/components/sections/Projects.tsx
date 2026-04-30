@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { PROJECTS } from '../../data';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
@@ -20,19 +20,19 @@ export const Projects: React.FC = () => {
   const activeProject = PROJECTS.find(p => p.id === selectedProject);
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-16 relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-right"
+          className="mb-16 text-left"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white text-glow">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-white rounded-full ml-auto" />
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-white rounded-full" />
         </motion.div>
 
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -44,32 +44,34 @@ export const Projects: React.FC = () => {
               transition={{ duration: 0.5, delay: idx * 0.15 }}
             >
               <Card
-                className="group cursor-pointer p-4 hover:-translate-y-2 transition-transform duration-300 h-full flex flex-col"
+                className="group cursor-pointer hover:-translate-y-3 transition-all duration-500 ease-out h-full flex flex-col overflow-hidden"
                 onClick={() => setSelectedProject(project.id)}
               >
-                <div className="relative w-full h-48 rounded-xl overflow-hidden mb-4">
-                  <div className="absolute inset-0 bg-primary/20 mix-blend-overlay group-hover:opacity-0 transition-opacity z-10 duration-300" />
+                <div className="relative w-full h-56 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <LazyLoadImage
                     src={project.image}
                     alt={project.title}
                     effect="blur"
-                    className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     wrapperClassName="w-full h-full"
                   />
                 </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-white/60 mb-4 flex-grow text-sm line-clamp-3">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.technologies.slice(0, 3).map(tech => (
-                    <span key={tech} className="text-xs px-2 py-1 rounded bg-white/5 text-primary border border-primary/20">
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <span className="text-xs px-2 py-1 rounded bg-white/5 text-white/50 border border-white/10">
-                      +{project.technologies.length - 3}
-                    </span>
-                  )}
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                  <p className="text-white/60 mb-4 flex-grow text-sm line-clamp-3">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.technologies.slice(0, 3).map(tech => (
+                      <span key={tech} className="text-xs px-2 py-1 rounded bg-white/5 text-primary border border-primary/20">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 3 && (
+                      <span className="text-xs px-2 py-1 rounded bg-white/5 text-white/50 border border-white/10">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </Card>
             </motion.div>

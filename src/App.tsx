@@ -49,7 +49,7 @@ function App() {
       <AudioPlayer />
 
       <footer className="py-8 text-center text-white/50 border-t border-white/5 mt-auto bg-dark z-10 relative">
-        <p className="font-mono text-sm tracking-widest">© {new Date().getFullYear()} ALEXANDER_DEV. ALL RIGHTS RESERVED.</p>
+        <p className="font-mono text-sm tracking-widest">© {new Date().getFullYear()} MITHELESH K. ALL RIGHTS RESERVED.</p>
       </footer>
     </div>
   );
