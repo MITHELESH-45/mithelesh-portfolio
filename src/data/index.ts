@@ -58,7 +58,7 @@ export const TECH_STACK_CATEGORIES = [
     ]
   },
   {
-    category: "AI & ML",
+    category: "AI",
     techs: [
       { name: "LangChain", logo: "https://raw.githubusercontent.com/langchain-ai/langchain/master/docs/static/img/favicon.ico" },
       { name: "OpenAI", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
@@ -91,30 +91,125 @@ export const PROJECTS = [
   {
     id: 1,
     title: "Agentic-CX",
-    description: "AI-powered customer support platform with a multi-agent architecture. Features a Router Agent that classifies user intents and routes between a RAG Agent for knowledge retrieval and an Action Agent for task execution. Achieved 86.8% Context Precision with a Hybrid Retrieval pipeline (vector + keyword search) and Ragas evaluation, cutting manual ticket resolution time by 40%.",
-    image: "/agentic_cx.png",
-    technologies: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Chroma Cloud", "LangChain", "OpenAI"],
+    description:
+      "AI-powered customer support platform using a multi-agent architecture with intelligent routing between RAG-based retrieval and action execution agents. Achieved 86.8% context precision and reduced manual resolution time by 40%.",
+    image: "/projects/agentic_cx.png",
+    technologies: ["React", "Node.js", "MongoDB", "LangChain", "OpenAI"],
     link: "",
-    repo: "https://github.com/MITHELESH-45/Agenitc-CX"
+    repo: "https://github.com/MITHELESH-45/Agenitc-CX",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "AI System",
   },
   {
     id: 2,
     title: "DevConnect",
-    description: "Developer networking platform supporting profile creation and connection management. Built with React + Redux Toolkit frontend and Node.js / Express REST APIs. Implements JWT authentication, a scalable connection request lifecycle, paginated feed APIs, and is deployed on AWS EC2 with Nginx reverse proxy and HTTPS.",
-    image: "/devconnect.png",
-    technologies: ["React", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "JWT", "AWS EC2", "Nginx"],
+    description:
+      "Full-stack developer networking platform with JWT authentication, scalable APIs, and AWS deployment using Nginx for production-ready performance.",
+    image: "/projects/devconnect.png",
+    technologies: ["React", "Redux Toolkit", "Node.js", "MongoDB", "JWT", "AWS"],
     link: "https://devconnecttt.duckdns.org",
-    repo: "https://github.com/MITHELESH-45/devconnect"
+    repo: "https://github.com/MITHELESH-45/devconnect",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "Full Stack",
   },
   {
     id: 3,
+    title: "EduGroot",
+    description:
+      "Interactive EdTech platform for electronics and IoT learning with a real-time circuit simulator and structured modules for hands-on learning.",
+    image: "/projects/edugroot.png",
+    technologies: ["Next.js", "Node.js", "MongoDB"],
+    link: "https://edtech-9wnc.onrender.com/",
+    repo: "https://github.com/MITHELESH-45/EduGroot",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "EdTech",
+  },
+  {
+    id: 4,
     title: "FeedFlow",
-    description: "Role-based food donation management platform connecting donors, NGOs, and volunteers to streamline donation workflows. Features JWT authentication, role-based authorization, and admin NGO verification for secure access control.",
-    image: "/feedflow.png",
-    technologies: ["Next.js", "Node.js", "MongoDB", "JWT", "Cloudinary"],
+    description:
+      "Food donation management platform connecting donors, NGOs, and volunteers with secure role-based authentication and workflow management.",
+    image: "/projects/feedflow.png",
+    technologies: ["Next.js", "Node.js", "MongoDB"],
     link: "https://feed-flow-brown.vercel.app/",
-    repo: "https://github.com/MITHELESH-45/FeedFlow"
-  }
+    repo: "https://github.com/MITHELESH-45/FeedFlow",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "Full Stack",
+  },
+  {
+    id: 5,
+    title: "Trendora",
+    description:
+      "MERN-based e-commerce platform with product filtering, cart management, and secure checkout for a seamless shopping experience.",
+    image: "/projects/trendora.png",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "https://trendora-frontend.vercel.app/",
+    repo: "https://github.com/MITHELESH-45/Trendora",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "E-Commerce",
+  },
+  {
+    id: 6,
+    title: "Echoo",
+    description:
+      "Real-time chat application with responsive UI and smooth messaging experience, supporting live communication and user interactions.",
+    image: "/projects/echoo.png",
+    technologies: ["React", "HTML", "CSS"],
+    link: "https://echoo-henna.vercel.app",
+    repo: "https://github.com/MITHELESH-45/Echoo",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "Realtime App",
+  },
+  {
+    id: 7,
+    title: "Hackathon Management",
+    description:
+      "Platform for organizing and managing hackathons with participant workflows, event tracking, and admin control features.",
+    image: "/projects/hackfest.png",
+    technologies: ["Next.js", "Node.js", "MongoDB"],
+    link: "https://hackfest-nu-three.vercel.app/",
+    repo: "https://github.com/MITHELESH-45/hackfest",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "Full Stack",
+  },
+   {
+    id: 8,
+    title: "GitHub AI Assistant",
+    description:
+      "RAG-based AI assistant that retrieves and summarizes relevant GitHub code, documentation, and best practices for developers.",
+    image: "/projects/github.png",
+    technologies: ["Python", "LangChain", "OpenAI"],
+    link: "https://git-hub-ai-assistant.vercel.app/",
+    repo: "https://github.com/MITHELESH-45/GitHub-Ai-Assistant",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "AI Tool",
+  },
+  {
+    id: 9,
+    title: "Netflix GPT",
+    description:
+      "AI-based movie recommendation interface with modern UI, allowing users to discover movies based on input queries.",
+    image: "/projects/netflix.png",
+    technologies: ["React", "HTML", "CSS"],
+    link: "https://netflix-gpt-alpha-plum.vercel.app/",
+    repo: "https://github.com/MITHELESH-45/Netflix-gpt",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "AI UI",
+  },
+  {
+    id: 10,
+    title: "YouTube Clone",
+    description:
+      "Frontend clone of YouTube with responsive design, video browsing interface, and UI similar to real-world streaming platforms.",
+    image: "/projects/youtube.png",
+    technologies: ["React", "HTML", "CSS"],
+    link: "https://youtube-react-sable.vercel.app/",
+    repo: "https://github.com/MITHELESH-45/youtube-react",
+    demo: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    tag: "Frontend",
+  },
+ 
+
 ];
 
 export const EDUCATION = [
