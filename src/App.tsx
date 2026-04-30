@@ -3,6 +3,7 @@ import { Navbar } from './components/layout/Navbar';
 import { BackgroundParticles } from './components/3d/BackgroundParticles';
 import { AudioPlayer } from './components/layout/AudioPlayer';
 import { Spinner } from './components/ui/Spinner';
+import { Analytics } from "@vercel/analytics/react";
 
 // Lazy loading heavy sections to optimize initial bundle size & performance
 const Hero = React.lazy(() => import('./components/sections/Hero').then(module => ({ default: module.Hero })));
@@ -15,6 +16,7 @@ const Contact = React.lazy(() => import('./components/sections/Contact').then(m 
 function App() {
   return (
     <div className="relative w-full h-full text-white">
+      <Analytics />
       <Navbar />
       <BackgroundParticles />
 

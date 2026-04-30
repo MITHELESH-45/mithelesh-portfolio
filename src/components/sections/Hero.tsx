@@ -86,8 +86,8 @@ export const Hero: React.FC = () => {
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Hi, I'm{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white text-glow whitespace-nowrap">
-              {HERO_DATA.name}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white text-glow whitespace-normal sm:whitespace-nowrap">
+              MITHELESH <br className="sm:hidden" /> K
             </span>
           </h1>
 
