@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { BackgroundParticles } from './components/3d/BackgroundParticles';
 import { AudioPlayer } from './components/layout/AudioPlayer';
-import { Spinner } from './components/ui/Spinner';
+import { LoadingScreen } from './components/ui/LoadingScreen';
 import { Analytics } from "@vercel/analytics/react";
 
 // Lazy loading heavy sections to optimize initial bundle size & performance
@@ -21,27 +21,12 @@ function App() {
       <BackgroundParticles />
 
       <main className="w-full flex-grow">
-        <Suspense fallback={<Spinner />}>
+        <Suspense fallback={<LoadingScreen />}>
           <Hero />
-        </Suspense>
-
-        <Suspense fallback={<Spinner />}>
           <Services />
-        </Suspense>
-
-        <Suspense fallback={<Spinner />}>
           <TechStack />
-        </Suspense>
-
-        <Suspense fallback={<Spinner />}>
           <Projects />
-        </Suspense>
-
-        <Suspense fallback={<Spinner />}>
           <Experience />
-        </Suspense>
-
-        <Suspense fallback={<Spinner />}>
           <Contact />
         </Suspense>
       </main>
