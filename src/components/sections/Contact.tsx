@@ -76,9 +76,9 @@ export const Contact: React.FC = () => {
             Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white text-glow">Connect</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-white rounded-full mx-auto mb-8" />
-          <p className="text-white/60 max-w-lg mx-auto">
+          {/* <p className="text-white/60 max-w-lg mx-auto">
             Currently available for freelance opportunities. Let's build something extraordinary together.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
@@ -164,7 +164,7 @@ export const Contact: React.FC = () => {
                     {...register("message", { required: true })}
                     rows={5}
                     className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none hover:border-white/20"
-                    placeholder="Tell me about your project..."
+                    placeholder="Type your message here..."
                   />
                   {errors.message && <span className="text-red-400 text-xs">This field is required</span>}
                 </div>
