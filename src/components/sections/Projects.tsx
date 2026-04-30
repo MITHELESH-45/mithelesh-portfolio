@@ -164,7 +164,7 @@ export const Projects: React.FC = () => {
                 <img
                   src={activeProject.image}
                   alt={activeProject.title}
-                  className="object-contain w-full h-full"
+                  className="object-cover w-full h-full"
                 />
                 {activeProject.tag && (
                   <div className="absolute top-4 right-4 z-20 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-xl">

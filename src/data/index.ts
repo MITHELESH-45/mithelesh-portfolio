@@ -239,7 +239,7 @@ export const ACHIEVEMENTS = [
     title: "Theme Winner — CMR Hackfest 3.0",
     description: "Secured 1st place at the theme level in the EdTech category at CMR Hackfest 3.0.",
     image: "/cmr%20wining%20image.jpeg",
-    link: "https://www.linkedin.com/in/mitheleshk3005/",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7416316813938053120/",
     date: "2026"
   },
 ];

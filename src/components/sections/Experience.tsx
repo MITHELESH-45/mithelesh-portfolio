@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { Card } from '../ui/Card';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Maximize2 } from 'lucide-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -53,26 +53,54 @@ export const Experience: React.FC = () => {
                   className="w-full max-w-lg"
                 >
                   <Card
-                    className="group cursor-pointer overflow-hidden hover:-translate-x-2 hover:-translate-y-2 transition-all duration-500 ease-out h-full flex flex-col"
+                    className="group cursor-pointer transition-all duration-500 ease-out h-full flex flex-col overflow-hidden relative border-white/5 hover:border-primary/30 p-0"
                     onClick={() => setSelectedAchievement(achievement.id)}
                   >
-                    <div className="relative w-full h-64 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Image Section */}
+                    <div className="relative w-full h-64 overflow-hidden bg-black/20">
+                      {/* View Details Overlay */}
+                      <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-primary/10 backdrop-blur-[2px]">
+                        <div className="flex flex-col items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-[0_0_20px_rgba(0,240,255,0.5)]">
+                            <Maximize2 className="w-6 h-6 text-dark" />
+                          </div>
+                          <span className="text-primary font-bold text-xs uppercase tracking-[0.2em] text-glow">
+                            View Details
+                          </span>
+                        </div>
+                      </div>
+                      
+                      {/* Date Badge */}
+                      <div className="absolute top-4 left-4 z-20 bg-dark/80 backdrop-blur-md border border-white/10 text-white/90 text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider">
+                        {achievement.date}
+                      </div>
+
                       <LazyLoadImage
                         src={achievement.image}
                         alt={achievement.title}
                         effect="blur"
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        className="object-cover w-full h-full transform group-hover:scale-105 group-hover:blur-[2px] transition-all duration-1000 ease-out"
                         wrapperClassName="w-full h-full"
                       />
                     </div>
-                    <div className="p-5 flex flex-col gap-2">
-                      <div className="flex flex-col">
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">{achievement.title}</h3>
-                        <span className="text-primary/70 font-mono text-xs mt-2 self-start bg-primary/10 px-2 py-1 rounded">{achievement.date}</span>
+
+                    {/* Content Area */}
+                    <div className="p-5 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                        {achievement.title}
+                      </h3>
+                      <p className="text-white/50 mb-4 flex-grow text-xs leading-relaxed line-clamp-3">
+                        {achievement.description}
+                      </p>
+                      
+                      <div className="flex items-center gap-2 text-primary/70">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <span className="text-[10px] uppercase tracking-widest font-bold">Achievement</span>
                       </div>
-                      <p className="text-white/60 text-sm mt-1 leading-relaxed">{achievement.description}</p>
                     </div>
+
+                    {/* Bottom glow line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </Card>
                 </motion.div>
               ))}
@@ -154,24 +182,24 @@ export const Experience: React.FC = () => {
         <Modal isOpen={!!selectedAchievement} onClose={() => setSelectedAchievement(null)}>
           {activeAchievement && (
             <div className="text-left">
-              <div className="relative w-full h-64 sm:h-80 rounded-xl overflow-hidden mb-8 border border-white/10">
+              <div className="relative w-full h-64 sm:h-80 rounded-xl overflow-hidden mb-8 border border-white/10 shadow-2xl bg-black/40">
                 <img
                   src={activeAchievement.image}
                   alt={activeAchievement.title}
                   className="object-cover w-full h-full"
                 />
+                <div className="absolute top-4 right-4 z-20 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-xl">
+                  {activeAchievement.date}
+                </div>
               </div>
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-3xl font-bold">{activeAchievement.title}</h3>
-                <span className="text-primary font-mono text-sm bg-primary/10 px-3 py-1 rounded-full">{activeAchievement.date}</span>
-              </div>
+              <h3 className="text-3xl font-bold mb-4 text-glow">{activeAchievement.title}</h3>
               <p className="text-white/70 leading-relaxed mb-8">{activeAchievement.description}</p>
 
               <div className="flex gap-4">
                 {activeAchievement.link && (
                   <a href={activeAchievement.link} target="_blank" rel="noopener noreferrer" className="w-full">
-                    <Button className="w-full gap-2">
-                      <ExternalLink className="w-4 h-4" /> View Post
+                    <Button className="w-full gap-2 shadow-neon">
+                      <ExternalLink className="w-4 h-4" /> View Achievement Post
                     </Button>
                   </a>
                 )}
