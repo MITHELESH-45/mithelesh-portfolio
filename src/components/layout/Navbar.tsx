@@ -19,15 +19,17 @@ export const Navbar: React.FC = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 pointer-events-none",
-        isScrolled ? "py-4" : "py-6"
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-500 pointer-events-none",
+        isScrolled ? "py-4" : "py-8"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 pointer-events-auto">
         <nav
           className={cn(
-            "flex items-center justify-between rounded-2xl px-6 py-4 transition-all duration-300",
-            isScrolled ? "glass shadow-neon" : "bg-transparent"
+            "flex items-center justify-between rounded-full px-12 py-6 transition-all duration-500",
+            isScrolled 
+              ? "bg-dark shadow-[0_4px_20px_rgba(0,0,0,0.9)] border border-white/10" 
+              : "bg-transparent border-transparent"
           )}
         >
           <Link

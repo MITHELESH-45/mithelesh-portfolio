@@ -225,9 +225,9 @@ export const EDUCATION = [
     id: 2,
     year: "Up to 2023",
     title: "Higher Secondary Education",
-    description: "Completed primary and higher secondary education with strong academic fundamentals.",
+    description: "Completed primary and higher secondary education in Srinivasa Vidhyalaya,Udumalpet with strong academic fundamentals.",
     image: "/opensource_contrib.png",
-    status: "completed",
+    status: "completed",  
   }
 ];
 
