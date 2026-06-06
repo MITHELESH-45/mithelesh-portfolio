@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
               }}
             >
               <img
-                src="/mithulportfolio%20image.png"
+                src="/mithelesh%20profile.jpeg"
                 alt="MITHELESH K"
                 className="w-full h-full object-cover object-top transition-transform duration-700 photo-blend"
                 style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
