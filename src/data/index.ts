@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   { name: 'Home', to: 'home' },
   { name: 'Services', to: 'services' },
   { name: 'Projects', to: 'projects' },
+  { name: 'Jarvis', to: 'jarvis' },
   { name: 'Achievements', to: 'experience' },
   { name: 'Contact', to: 'contact' },
 ];

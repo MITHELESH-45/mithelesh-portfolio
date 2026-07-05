@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 const Hero = React.lazy(() => import('./components/sections/Hero').then(module => ({ default: module.Hero })));
 const Services = React.lazy(() => import('./components/sections/Services').then(m => ({ default: m.Services })));
 const TechStack = React.lazy(() => import('./components/sections/TechStack').then(m => ({ default: m.TechStack })));
+const Jarvis = React.lazy(() => import('./components/sections/Jarvis').then(m => ({ default: m.Jarvis })));
 const Projects = React.lazy(() => import('./components/sections/Projects').then(m => ({ default: m.Projects })));
 const Experience = React.lazy(() => import('./components/sections/Experience').then(m => ({ default: m.Experience })));
 const Contact = React.lazy(() => import('./components/sections/Contact').then(m => ({ default: m.Contact })));
@@ -25,6 +26,7 @@ function App() {
           <Hero />
           <Services />
           <TechStack />
+          <Jarvis />
           <Projects />
           <Experience />
           <Contact />
